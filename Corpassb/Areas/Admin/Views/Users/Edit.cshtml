@@ -1,0 +1,22 @@
+﻿@model Corpassb.Areas.Admin.ViewModels.EditUserViewModel;
+@{
+    ViewBag.Title = "Редактирование пользователя";
+}
+
+<form class="centered" asp-action="Edit" asp-controller="Users">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div >
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div >
+        <label asp-for="Email" >Email:</label>
+        <input type="email" asp-for="Email" />
+    </div>
+    <div >
+        <label asp-for="Login" >Логин:</label>
+        <input type="text" asp-for="Login" />
+    </div>
+    <div >
+        <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+    </div>
+</form>

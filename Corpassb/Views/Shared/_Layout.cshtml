@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Corpassb | @ViewBag.Title</title>
+</head>
+<body>
+    <div id="header">
+        <a href="/Home/Index">Home</a>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div id="uAreLoginedAsText">Вы вошли как @User.Identity.Name</div>
+
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <input type="submit" id="exitButton" value="Выход" />
+            </form>
+
+            if (User.IsInRole("Admin"))
+            {
+                <a href="/Admin" id="adminPanel">Админ-панель</a>
+            }
+        }
+        else
+        {
+            <span> | </span>
+            <a href="/Account/Login">Войти</a>
+        }
+    </div>
+
+    <h2>@ViewBag.Title</h2>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <p>Corpassb since 2023.</p>
+    </footer>
+</body>
+</html>

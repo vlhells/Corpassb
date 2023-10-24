@@ -1,0 +1,23 @@
+﻿@model Corpassb.Areas.Admin.ViewModels.CreateUserViewModel;
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+
+<form class="centered" asp-action="Create" asp-controller="Users">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div >
+        <label asp-for="Email" >Email:</label>
+        <input type="email" asp-for="Email" />
+    </div>
+    <div >
+        <label asp-for="Login" >Логин:</label>
+        <input type="text" asp-for="Login" />
+    </div>
+    <div >
+        <label asp-for="Password" >Пароль:</label>
+        <input type="password" asp-for="Password" />
+    </div>
+    <div >
+        <input type="submit" value="Добавить" class="btn btn-outline-secondary" />
+    </div>
+</form>

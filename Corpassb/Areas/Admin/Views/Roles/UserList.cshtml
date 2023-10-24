@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Corpassb.Areas.Admin.Models.User>
+
+@{
+    ViewBag.Title = "Пользователи";
+}
+<table class="centered">
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>
+                <a asp-action="Edit" asp-route-userid="@user.Id">Права доступа</a>
+            </td>
+        </tr>
+    }
+</table>
