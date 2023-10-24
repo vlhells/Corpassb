@@ -28,6 +28,7 @@ namespace Corpassb.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var result =
                     await _signInManager.PasswordSignInAsync
                     (model.Login, model.Password, model.RememberMe, false);
